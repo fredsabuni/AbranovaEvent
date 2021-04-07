@@ -1,28 +1,7 @@
 
 
 $(function() {
-    "use strict";
-
-
-    /* ==========================================================================
-   Sub Form   
-   ========================================================================== */
-    
-    $.ajaxChimp.translations.cm = {
-        'submit': 'Submitting...',
-        0: '<i class="fa fa-envelope"></i> Awesome! Subscription confirmed',
-        1: '<i class="fa fa-exclamation-triangle"></i> Please enter a value',
-        2: '<i class="fa fa-exclamation-triangle"></i> An email address must contain a single @',
-        3: '<i class="fa fa-exclamation-triangle"></i> The domain portion of the email address is invalid (the portion after the @: )',
-        4: '<i class="fa fa-exclamation-triangle"></i> The username portion of the email address is invalid (the portion before the @: )',
-        5: '<i class="fa fa-exclamation-triangle"></i> This email address looks fake or invalid. Please enter a real email address'
-    }
-
-
-    /* ==========================================================================
-       Number animation
-       ========================================================================== */
-    
+    "use strict"; 
     
     $('.counter').waypoint(function() {
         
