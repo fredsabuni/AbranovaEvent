@@ -8,15 +8,6 @@ $(function() {
    Sub Form   
    ========================================================================== */
     
-    
-    
-    $('#mc-form').ajaxChimp({
-        language: 'cm',
-        url: ''
-    //http://xxx.xxx.list-manage.com/subscribe/post?u=xxx&id=xxx
-    });
-    
-    
     $.ajaxChimp.translations.cm = {
         'submit': 'Submitting...',
         0: '<i class="fa fa-envelope"></i> Awesome! Subscription confirmed',
