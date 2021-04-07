@@ -224,7 +224,7 @@
             <div class="input-group">
               <input type="email" class="form-control" name="email_field"  placeholder="Email Address" required id="mc-email">
               <i class="fa fa-envelope-o"></i> <span class="input-group-btn">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" onclick="SubForm()" class="btn btn-default">Submit</button>
               </span> </div>
             <label for="mc-email" id="mc-notification"></label>
           </form>
@@ -311,18 +311,27 @@
 <script src="js/jquery.form.min.js"></script> 
 <script src="js/jquery.validate.min.js"></script> 
 <script src="js/main.js"></script>  
- 
-<script>
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxi-nSKweU0IoTkbbCWTmaFdBVz1lu0LuQCZzGnPq0F6jXeUCatva8Rb76pGEs6BSVi/exec'
-  const form = document.forms['mc-form']
 
-  form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+function SubForm (){
+    $.ajax({
+        url:'https://api.apispreadsheets.com/data/10583/',
+        type:'post',
+        data:$("#mc-form").serializeArray(),
+        success: function(){
+          alert("Form Data Submitted :)")
+        },
+        error: function(){
+          alert("There was an error :(")
+        }
+    });
+}
 </script>
+
 </body>
 
 </html>
